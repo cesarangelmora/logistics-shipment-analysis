@@ -1,28 +1,87 @@
-# Logistics Shipment Performance Analysis
+Logistics Shipment Performance Analysis
 
-## Project overview
-This portfolio project analyzes a **synthetic** dataset of 240 shipments to demonstrate practical data analysis skills. The data is fictional and was created for portfolio practice; it does not represent an actual employer or customer.
+Project Overview
 
-## Business questions
-1. What is the total shipping cost and average cost per shipment?
-2. What percentage of shipments arrived on time?
-3. Which carriers have the highest average shipping cost?
-4. Which regions have the longest average transit times?
-5. Does performance differ between LTL and FTL shipments?
+This project analyzes a synthetic dataset of 240 shipments to explore shipping costs, delivery performance, carrier differences, and regional trends. I used Python, pandas, and Matplotlib to calculate key performance indicators (KPIs), compare carrier performance, and create charts.
 
-## Dataset
-`shipments.csv` contains 240 synthetic shipment records with shipment dates, customer labels, carrier, region, mode, distance, shipping cost, planned transit time, actual transit time, and on-time status.
+Note: This is a portfolio practice project using fictional data. It does not represent actual company operations.
 
-## Tools
-- Python
-- pandas
-- matplotlib
+Business Questions
 
-## How to run for free
-1. Open [Google Colab](https://colab.research.google.com/).
-2. Create a new notebook.
-3. Upload `shipments.csv` into the notebook session.
-4. Copy the code from `analysis.py` into a notebook cell and run it. If needed, install dependencies with `!pip install pandas matplotlib`.
+What is the total shipping cost and average cost per shipment?
 
-## Important note
-This is a demonstration project using synthetic data. Results should be described as findings from the sample dataset, not as real-world business results or professional work performed for an employer.
+What percentage of shipments arrived on time?
+
+How do average shipping costs differ by carrier?
+
+Which regions have the strongest and weakest on-time delivery performance?
+
+How do average costs compare between Less-than-Truckload (LTL) and Full Truckload (FTL) shipments?
+
+Key Results
+
+KPI
+
+Result
+
+Total shipments analyzed
+
+240
+
+Total shipping cost
+
+$387,161.52
+
+Average cost per shipment
+
+$1,613.17
+
+Overall on-time delivery rate
+
+75.0%
+
+Key Insights
+
+Regional performance: The Midwest had the highest on-time delivery rate at approximately 81%, while the Northeast had the lowest at approximately 67%.
+
+Shipment mode: Average FTL shipping cost was approximately $1,940 per shipment, compared with approximately $1,410 for LTL shipments.
+
+Carrier comparison: Carrier-level results can help identify differences in average shipping cost and on-time performance for further investigation.
+
+Business recommendation: Investigate delivery delays in the Northeast and compare shipment distance, size, and service requirements before making carrier or mode changes.
+
+These findings describe the sample dataset only. Differences in shipment characteristics should be considered before drawing operational conclusions.
+
+Tools Used
+
+Python
+
+pandas
+
+Matplotlib
+
+Google Colab
+
+GitHub
+
+Project Files
+
+shipments.csv — synthetic shipment dataset.
+
+analysis.py — Python script for calculating KPIs and generating charts.
+
+Logistics_shipment_analysis.ipynb — notebook containing the analysis and visualizations.
+
+How to Run
+
+Open the notebook in Google Colab.
+
+Upload shipments.csv to the Colab session.
+
+Run the code cells from top to bottom.
+
+Review the KPI results, carrier summary, and charts.
+
+Skills Demonstrated
+
+Data cleaning and inspection, KPI calculation, data aggregation, carrier performance analysis, regional comparisons, data visualization, and communicating business insights.
