@@ -31,6 +31,7 @@ I used Python, pandas, and Matplotlib to calculate key performance indicators (K
 - **Shipping mode:** Average FTL shipping cost was approximately $1,940 per shipment, compared with approximately $1,410 for LTL shipments.
 - **Carrier performance:** Comparing average costs and delivery rates can help identify areas for further investigation.
 - **Business recommendation:** Investigate delivery delays in the Northeast and compare shipment distance, shipment size, and service requirements before making operational changes.
+- ![On-Time Delivery Rate by Region](charts/on_time_by_region.png)
 
 These findings describe the synthetic dataset only and should not be treated as actual company performance.
 
