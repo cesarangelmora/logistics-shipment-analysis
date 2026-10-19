@@ -2,9 +2,11 @@ Logistics Shipment Performance Analysis
 
 Project Overview
 
-This project analyzes a synthetic dataset of 240 shipments to explore shipping costs, delivery performance, carrier differences, and regional trends. I used Python, pandas, and Matplotlib to calculate key performance indicators (KPIs), compare carrier performance, and create charts.
+This project analyzes a synthetic dataset of 240 shipments to evaluate shipping costs, carrier performance, and on-time delivery rates.
 
-Note: This is a portfolio practice project using fictional data. It does not represent actual company operations.
+I used Python, pandas, and Matplotlib to calculate key performance indicators (KPIs), compare shipping methods, and identify regional delivery trends.
+
+Note: All shipment data is fictional and created for portfolio practice.
 
 Business Questions
 
@@ -16,7 +18,7 @@ How do average shipping costs differ by carrier?
 
 Which regions have the strongest and weakest on-time delivery performance?
 
-How do average costs compare between Less-than-Truckload (LTL) and Full Truckload (FTL) shipments?
+How do costs compare between Less-than-Truckload (LTL) and Full Truckload (FTL) shipments?
 
 Key Results
 
@@ -44,13 +46,13 @@ Key Insights
 
 Regional performance: The Midwest had the highest on-time delivery rate at approximately 81%, while the Northeast had the lowest at approximately 67%.
 
-Shipment mode: Average FTL shipping cost was approximately $1,940 per shipment, compared with approximately $1,410 for LTL shipments.
+Shipping method: Average FTL shipping cost was approximately $1,940 per shipment, compared with approximately $1,410 for LTL shipments.
 
-Carrier comparison: Carrier-level results can help identify differences in average shipping cost and on-time performance for further investigation.
+Carrier performance: Comparing average shipping costs by carrier helps identify areas for further investigation.
 
-Business recommendation: Investigate delivery delays in the Northeast and compare shipment distance, size, and service requirements before making carrier or mode changes.
+Business recommendation: Investigate delivery delays in the Northeast and compare shipment distance, shipment type, and service requirements before making operational changes.
 
-These findings describe the sample dataset only. Differences in shipment characteristics should be considered before drawing operational conclusions.
+These findings apply only to the synthetic dataset and should not be treated as actual company performance.
 
 Tools Used
 
@@ -66,22 +68,22 @@ GitHub
 
 Project Files
 
-shipments.csv — synthetic shipment dataset.
+Jupyter Notebook — analysis and visualizations.
 
-analysis.py — Python script for calculating KPIs and generating charts.
+Python Script — KPI calculations and charts.
 
-Logistics_shipment_analysis.ipynb — notebook containing the analysis and visualizations.
-
-How to Run
-
-Open the notebook in Google Colab.
-
-Upload shipments.csv to the Colab session.
-
-Run the code cells from top to bottom.
-
-Review the KPI results, carrier summary, and charts.
+Dataset — synthetic shipment records.
 
 Skills Demonstrated
 
-Data cleaning and inspection, KPI calculation, data aggregation, carrier performance analysis, regional comparisons, data visualization, and communicating business insights.
+Data analysis, KPI reporting, data aggregation, carrier performance analysis, regional comparisons, data visualization, and business recommendations.
+
+How to Run
+
+Open the Jupyter notebook in Google Colab.
+
+Upload shipments.csv if needed.
+
+Run the notebook cells from top to bottom.
+
+Review the KPI results and charts.
