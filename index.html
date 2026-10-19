@@ -1,95 +1,382 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logistics Shipment Analysis | Portfolio</title>
+  <title>Logistics Analytics | Portfolio</title>
   <style>
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
       line-height: 1.6;
-      color: #222;
-      background: #f7f9fc;
     }
-    header, section {
-      background: white;
-      padding: 24px;
-      margin-bottom: 20px;
-      border-radius: 12px;
+
+    .hero {
+      background: linear-gradient(135deg, #102a43, #1769aa);
+      color: white;
+      padding: 55px 24px;
     }
-    h1, h2 { color: #17365d; }
-    .kpis {
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #93d5ff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #e2edf8;
+      font-size: 17px;
+    }
+
+    .buttons {
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 17px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      background: white;
+      color: #124d80;
+    }
+
+    .btn.secondary {
+      border: 1px solid #b8d8f3;
+      color: white;
+      background: transparent;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 26px;
+    }
+
+    .section-heading {
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 4px;
+      font-size: 23px;
+    }
+
+    .section-heading p {
+      color: #617187;
+      margin-top: 0;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
     }
-    .kpi {
-      flex: 1;
-      min-width: 150px;
-      background: #eaf2fb;
-      padding: 16px;
-      border-radius: 8px;
+
+    .card {
+      background: white;
+      border: 1px solid #e1e8f0;
+      border-radius: 13px;
+      padding: 22px;
+      box-shadow: 0 4px 15px rgba(20, 45, 75, 0.04);
     }
-    .number { font-size: 24px; font-weight: bold; }
-    img { max-width: 100%; height: auto; margin: 12px 0 24px; }
-    a { color: #0969da; }
+
+    .kpi-label {
+      color: #617187;
+      font-size: 14px;
+    }
+
+    .kpi-value {
+      font-size: clamp(23px, 3vw, 30px);
+      font-weight: bold;
+      color: #145b96;
+      margin-top: 8px;
+    }
+
+    .kpi-note {
+      font-size: 12px;
+      color: #7a8798;
+      margin-top: 4px;
+    }
+
+    .charts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .chart-card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .chart-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 7px;
+    }
+
+    .insights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .insight {
+      border-left: 4px solid #2385c6;
+    }
+
+    .insight h3 {
+      margin-top: 0;
+      font-size: 17px;
+    }
+
+    .insight p, .card p {
+      color: #526176;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e5f2ff;
+      color: #145b96;
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 13px;
+      margin: 3px 4px 3px 0;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #6a788b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      color: #617187;
+      border-top: 1px solid #e1e8f0;
+      margin-top: 35px;
+    }
+
+    footer a {
+      color: #145b96;
+    }
+
+    @media (max-width: 760px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .charts, .insights { grid-template-columns: 1fr; }
+      .hero { padding: 40px 20px; }
+    }
+
+    @media (max-width: 400px) {
+      .kpis { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Logistics Shipment Performance Analysis</h1>
-    <p>A data analytics portfolio project using Python, pandas, and Matplotlib.</p>
-    <p>This project uses fictional shipment data created for practice.</p>
-    <p><a href="https://github.com/cesarangelmora/logistics-shipment-analysis">View the project on GitHub</a></p>
-  </header>
 
-  <section>
-    <h2>Project Overview</h2>
-    <p>I analyzed 240 shipments to explore shipping costs, delivery performance, and differences between shipping methods and regions.</p>
-    <h2>Key Results</h2>
-    <div class="kpis">
-      <div class="kpi">
-        <div class="number">240</div>
-        <div>Shipments analyzed</div>
-      </div>
-      <div class="kpi">
-        <div class="number">$387,161.52</div>
-        <div>Total shipping cost</div>
-      </div>
-      <div class="kpi">
-        <div class="number">$1,613.17</div>
-        <div>Average cost per shipment</div>
-      </div>
-      <div class="kpi">
-        <div class="number">75%</div>
-        <div>On-time delivery rate</div>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Data Analytics Portfolio Project</div>
+      <h1>Logistics Shipment<br>Performance Dashboard</h1>
+      <p>
+        An analysis of shipment costs, delivery performance, and shipping
+        methods using Python, pandas, and data visualization.
+      </p>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/cesarangelmora/logistics-shipment-analysis">
+          View GitHub Repository
+        </a>
+        <a class="btn secondary"
+           href="https://github.com/cesarangelmora/logistics-shipment-analysis/blob/main/Logistics_shipment_analysis.ipynb">
+          Explore Python Notebook
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <h2>On-Time Delivery Rate by Region</h2>
-    <img src="charts/on_time_by_region.png" alt="Bar chart showing on-time delivery rate by region">
-    <p>The Northeast had the lowest on-time delivery rate in this sample, while the Midwest had the highest.</p>
-  </section>
+  <main>
+    <section>
+      <div class="section-heading">
+        <h2>Project Overview</h2>
+        <p>Key performance indicators from 240 fictional shipments.</p>
+      </div>
 
-  <section>
-    <h2>Average Shipping Cost by Mode</h2>
-    <img src="charts/average_cost_by_mode.png" alt="Bar chart comparing average LTL and FTL shipping costs">
-    <p>In this sample, FTL shipments had a higher average cost per shipment than LTL shipments.</p>
-  </section>
+      <div class="kpis">
+        <div class="card">
+          <div class="kpi-label">Shipments Analyzed</div>
+          <div class="kpi-value">240</div>
+          <div class="kpi-note">Total shipment records</div>
+        </div>
 
-  <section>
-    <h2>Tools and Skills</h2>
-    <p>Python · pandas · Matplotlib · Google Colab · Data cleaning · KPI analysis · Data visualization · Logistics analytics</p>
-    <p><a href="Logistics_shipment_analysis.ipynb">View the analysis notebook</a> |
-       <a href="analysis.py">View the Python script</a> |
-       <a href="shipments.csv">View the dataset</a></p>
-    <p><strong>Note:</strong> All results are based on synthetic data and do not represent actual company performance.</p>
-  </section>
+        <div class="card">
+          <div class="kpi-label">Total Shipping Cost</div>
+          <div class="kpi-value">$387K</div>
+          <div class="kpi-note">$387,161.52 total</div>
+        </div>
+
+        <div class="card">
+          <div class="kpi-label">Average Cost</div>
+          <div class="kpi-value">$1,613</div>
+          <div class="kpi-note">Per shipment</div>
+        </div>
+
+        <div class="card">
+          <div class="kpi-label">On-Time Delivery</div>
+          <div class="kpi-value">75%</div>
+          <div class="kpi-note">Overall delivery rate</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Data Visualizations</h2>
+        <p>Explore regional delivery performance and shipping costs.</p>
+      </div>
+
+      <div class="charts">
+        <div class="card chart-card">
+          <h3>On-Time Delivery by Region</h3>
+          <img src="charts/on_time_by_region.png"
+               alt="Bar chart showing on-time delivery percentages by region">
+          <p class="note">
+            The Northeast has the lowest on-time delivery rate in this dataset.
+          </p>
+        </div>
+
+        <div class="card chart-card">
+          <h3>Average Shipping Cost by Mode</h3>
+          <img src="charts/average_cost_by_mode.png"
+               alt="Bar chart comparing average LTL and FTL shipping costs">
+          <p class="note">
+            FTL shipments have a higher average cost per shipment than LTL.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Business Insights</h2>
+        <p>What the results could mean for logistics operations.</p>
+      </div>
+
+      <div class="insights">
+        <div class="card insight">
+          <h3>01. Regional Delivery Performance</h3>
+          <p>
+            On-time delivery ranges from 67.4% in the Northeast to 80.8%
+            in the Midwest. Investigating regional delays may help improve
+            service reliability.
+          </p>
+        </div>
+
+        <div class="card insight">
+          <h3>02. Shipping Method Costs</h3>
+          <p>
+            FTL has a higher average shipment cost than LTL. A fair comparison
+            should also consider distance, shipment size, and service needs.
+          </p>
+        </div>
+
+        <div class="card insight">
+          <h3>03. Carrier Performance</h3>
+          <p>
+            Comparing carrier costs and delivery rates can help identify
+            opportunities for further investigation and improvement.
+          </p>
+        </div>
+
+        <div class="card insight">
+          <h3>04. Recommended Next Step</h3>
+          <p>
+            Investigate late shipments in the Northeast and review transit
+            times, distances, and carrier performance before changing operations.
+          </p>
+        </div>
+      </div>
+
+      <p class="note">
+        All data is synthetic and created for portfolio practice. These results
+        do not represent the performance of a real company.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Tools & Skills</h2>
+        <p>Technologies and analysis methods demonstrated in this project.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">Python</span>
+        <span class="tag">pandas</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Google Colab</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">KPI Analysis</span>
+        <span class="tag">Data Visualization</span>
+        <span class="tag">Logistics Analytics</span>
+        <span class="tag">Business Insights</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>About This Project</h2>
+      </div>
+      <div class="card">
+        <p>
+          This portfolio project combines logistics knowledge with data
+          analytics to examine shipment performance and costs. The goal is to
+          turn shipment records into clear measurements and practical business
+          recommendations.
+        </p>
+        <p>
+          The analysis uses a fictional dataset to demonstrate analytical
+          methods, Python skills, and the communication of business findings.
+        </p>
+        <a href="https://github.com/cesarangelmora/logistics-shipment-analysis">
+          View project files on GitHub →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Logistics Shipment Performance Analysis ·
+    <a href="https://github.com/cesarangelmora/logistics-shipment-analysis">
+      GitHub Repository
+    </a>
+  </footer>
 </body>
 </html>
