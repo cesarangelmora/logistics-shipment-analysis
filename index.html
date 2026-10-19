@@ -1,1 +1,95 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics Shipment Analysis | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+      background: #f7f9fc;
+    }
+    header, section {
+      background: white;
+      padding: 24px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    h1, h2 { color: #17365d; }
+    .kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .kpi {
+      flex: 1;
+      min-width: 150px;
+      background: #eaf2fb;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .number { font-size: 24px; font-weight: bold; }
+    img { max-width: 100%; height: auto; margin: 12px 0 24px; }
+    a { color: #0969da; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Logistics Shipment Performance Analysis</h1>
+    <p>A data analytics portfolio project using Python, pandas, and Matplotlib.</p>
+    <p>This project uses fictional shipment data created for practice.</p>
+    <p><a href="https://github.com/cesarangelmora/logistics-shipment-analysis">View the project on GitHub</a></p>
+  </header>
+
+  <section>
+    <h2>Project Overview</h2>
+    <p>I analyzed 240 shipments to explore shipping costs, delivery performance, and differences between shipping methods and regions.</p>
+    <h2>Key Results</h2>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="number">240</div>
+        <div>Shipments analyzed</div>
+      </div>
+      <div class="kpi">
+        <div class="number">$387,161.52</div>
+        <div>Total shipping cost</div>
+      </div>
+      <div class="kpi">
+        <div class="number">$1,613.17</div>
+        <div>Average cost per shipment</div>
+      </div>
+      <div class="kpi">
+        <div class="number">75%</div>
+        <div>On-time delivery rate</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>On-Time Delivery Rate by Region</h2>
+    <img src="charts/on_time_by_region.png" alt="Bar chart showing on-time delivery rate by region">
+    <p>The Northeast had the lowest on-time delivery rate in this sample, while the Midwest had the highest.</p>
+  </section>
+
+  <section>
+    <h2>Average Shipping Cost by Mode</h2>
+    <img src="charts/average_cost_by_mode.png" alt="Bar chart comparing average LTL and FTL shipping costs">
+    <p>In this sample, FTL shipments had a higher average cost per shipment than LTL shipments.</p>
+  </section>
+
+  <section>
+    <h2>Tools and Skills</h2>
+    <p>Python · pandas · Matplotlib · Google Colab · Data cleaning · KPI analysis · Data visualization · Logistics analytics</p>
+    <p><a href="Logistics_shipment_analysis.ipynb">View the analysis notebook</a> |
+       <a href="analysis.py">View the Python script</a> |
+       <a href="shipments.csv">View the dataset</a></p>
+    <p><strong>Note:</strong> All results are based on synthetic data and do not represent actual company performance.</p>
+  </section>
+</body>
+</html>
